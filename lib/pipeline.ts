@@ -58,36 +58,36 @@ export class Pipeline extends Stack {
 
     const pre = [];
 
-    // if (envName === EnvNames.PRODUCTION) {
-    //   //
-    //   const manualApproval = new ManualApprovalStep('manualApproval', {
-    //     comment: `cdk-${appName}--pipeline--prd requires manual approval.`,
-    //   });
+    if (envName === EnvNames.PRODUCTION) {
+      //
+      const manualApproval = new ManualApprovalStep('manualApproval', {
+        comment: `cdk-${appName}--pipeline--prd requires manual approval.`,
+      });
 
-    //   pre.push(manualApproval);
-    // }
+      pre.push(manualApproval);
+    }
 
-    // // TODO: Create manual approval notification
+    // TODO: Create manual approval notification
 
-    // pipeline.addStage(
-    //   new Stage(this, `${appName}-`, {
-    //     appName,
-    //     defaultApiSubdomain: defaultDomainNames[envName].subdomains.api,
-    //     defaultAssetSubdomain: defaultDomainNames[envName].subdomains.assets,
-    //     defaultDomain: defaultDomainNames[envName].domain,
-    //     defaultGraphqlSubdomain: defaultDomainNames[envName].subdomains.graphql,
-    //     envName,
-    //     marketingSubdomain: defaultDomainNames[envName].subdomains.marketing,
-    //     noReplyAdminEmail: noReplyAdminEmails[envName],
-    //     orgName,
-    //     sentryDSN: sentryDSNs[envName],
-    //     sentrySamplingEnabled: sentrySamplingEnabled[envName],
-    //     snsTopics,
-    //     verifiedDomainSourceEmail: verifiedDomainSourceEmails[envName],
-    //   }),
-    //   {
-    //     pre,
-    //   }
-    // );
+    pipeline.addStage(
+      new Stage(this, `${appName}-`, {
+        appName,
+        defaultApiSubdomain: defaultDomainNames[envName].subdomains.api,
+        defaultAssetSubdomain: defaultDomainNames[envName].subdomains.assets,
+        defaultDomain: defaultDomainNames[envName].domain,
+        defaultGraphqlSubdomain: defaultDomainNames[envName].subdomains.graphql,
+        envName,
+        marketingSubdomain: defaultDomainNames[envName].subdomains.marketing,
+        noReplyAdminEmail: noReplyAdminEmails[envName],
+        orgName,
+        sentryDSN: sentryDSNs[envName],
+        sentrySamplingEnabled: sentrySamplingEnabled[envName],
+        snsTopics,
+        verifiedDomainSourceEmail: verifiedDomainSourceEmails[envName],
+      }),
+      {
+        pre,
+      }
+    );
   }
 }
