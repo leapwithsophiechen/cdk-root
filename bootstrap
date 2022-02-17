@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+export AWS_PAGER=""
+
+profile=sophiechen-toms-mac-pro
+accountId=840871995003
+
+regions="us-east-1 ap-southeast-1"
+
+for region in $regions
+  do
+    npx cdk bootstrap --profile $profile --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess aws://$accountId/$region
+  done

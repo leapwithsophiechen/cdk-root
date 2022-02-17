@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "baseUrl": "src",
+    "declaration": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "lib": ["es2018", "dom"],
+    "module": "commonjs",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": false,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "paths": {
+      "_middlewares*": ["middlewares"],
+      "_types*": ["_types"],
+      "_utils*": ["utils"]
+    },
+    "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false,
+    "target": "ES2018",
+    "typeRoots": ["node_modules/@types", "src/_types"]
+  },
+  "exclude": ["node_modules", "cdk.out"],
+  "include": [
+    "**/*.ts",
+    "**/*.d.ts",
+    "**/*.tsx",
+    "src",
+    ".eslintrc.js",
+    "jest.config.js"
+  ]
+}

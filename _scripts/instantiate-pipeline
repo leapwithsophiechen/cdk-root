@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+export AWS_PAGER=""
+
+source _scripts/config
+
+case $1 in
+  stg)
+    npx cdk deploy $appName--pipeline--stg --profile $profile
+    ;;
+  prd)
+    npx cdk deploy $appName--pipeline--prd --profile $profile
+    ;;
+esac

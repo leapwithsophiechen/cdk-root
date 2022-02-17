@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+export AWS_PAGER=""
+
+source _scripts/config
+
+echo "Checking code"
+yarn codecheck
+
+echo "Deploying"
+
+case $1 in
+  dev)
+    npx cdk deploy $appName-/* --profile $profile
+    ;;
+esac

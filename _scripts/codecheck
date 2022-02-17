@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+echo ""
+echo "Linting code"
+# yarn lint-staged
+echo ""
+
+echo ""
+echo "Checking types"
+# tsc
+echo ""
+echo ""
+
+echo ""
+echo "Checking Synth"
+# npx cdk synth
+echo ""
+echo ""
+
+echo ""
+echo "Running tests"
+# Run tests here
+echo ""
+echo ""
+

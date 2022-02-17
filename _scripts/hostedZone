@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+export AWS_PAGER=""
+
+source _scripts/config
+
+echo "Checking code"
+yarn codecheck
+
+echo "Deploying"
+npx cdk deploy $appName--hostedZone--$1 --profile $profile
