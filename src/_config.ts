@@ -24,7 +24,7 @@ export const defaultDomainNames = {
       api: 'api',
       assets: 'assets',
       graphql: 'graphql',
-      marketing: 'dev',
+      marketing: 'www',
     },
   },
   stg: {
