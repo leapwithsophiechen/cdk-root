@@ -120,6 +120,7 @@ export class Api extends Construct {
 
     if (envName === EnvNames.PRODUCTION) {
       new HttpStage(this, 'stage', {
+        autoDeploy: true,
         httpApi: this.httpApi,
         stageName: envName,
       });
