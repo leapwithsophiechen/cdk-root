@@ -119,9 +119,19 @@ export class Api extends Construct {
     }
 
     if (envName === EnvNames.PRODUCTION) {
-      new HttpStage(this, 'stage', {
+      // new HttpStage(this, 'stage', {
+      //   autoDeploy: true,
+      //   httpApi: this.httpApi,
+      //   stageName: envName,
+      // });
+      new CfnStage(this, 'stage', {
+        apiId: this.httpApi.httpApiId,
         autoDeploy: true,
-        httpApi: this.httpApi,
+        defaultRouteSettings: {
+          detailedMetricsEnabled: true,
+          throttlingBurstLimit: 1000,
+          throttlingRateLimit: 1000,
+        },
         stageName: envName,
       });
     }
